@@ -14,11 +14,9 @@ var app = express.createServer(express.logger());
     console.log(data);
 });*/
 
-
-
 app.get('/', function(request, response) {
     var fs=require('fs');
-    var buffer=new Buffer();
+    var buffer=new Buffer(100);
     buffer=fs.readFileSync("index.html");
    response.send(buffer.toString());
 });
